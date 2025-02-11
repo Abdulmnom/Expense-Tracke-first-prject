@@ -3,12 +3,12 @@ import { NextRequest , NextResponse } from "next/server";
 import isAuthenticated from "./app/libs/IsAuthenticated";
 
 export const config = {
-    matcher : ["/api/transaction/"],
+    matcher : ["/api/auth/transaction"],
 }
 
 export async function middleware(request:NextRequest ) {
     const pathname = request.nextUrl.pathname;
-    if(pathname.startsWith("/api/transaction/")) {
+    if(pathname.startsWith("/api/auth/transaction/")) {
         // Verfy authentication token here
 
         const userId = await isAuthenticated(request);

@@ -7,6 +7,7 @@ import AddTransaction from "./components/AddTransaction";
 import History from "./components/History";
 import classes from "./home.module.css"; // Import the CSS module
 import { useTranslations, useLocale } from "next-intl";
+import { signOut } from "next-auth/react";
 
 type Props = {};
 
@@ -30,6 +31,11 @@ export default function HomePage() {
   const globalState = useAppContext();
   const auth = globalState?.auth;
   const [transactions, setTransactions] = useState([]);
+
+  const handleLogout = async () => {
+    localStorage.removeItem("auth");
+    
+  }
 
   // Fetch transactions when the component mounts
   useEffect(() => {
@@ -56,7 +62,7 @@ export default function HomePage() {
         </div>
         <div className={classes["dashboard__history-transaction-container"]}>
           <a href="/graph" className={classes["dashboard__graph-link"]}>View Graph</a>
-          <a href="/graph" className={classes["dashboard__signOut-link"]}>Sign Out</a>
+          <button onClick={handleLogout} className={classes["dashboard__signOut-link"]}>Sign Out</button>
 
         </div>
       </div>

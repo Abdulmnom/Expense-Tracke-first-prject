@@ -17,6 +17,7 @@
     "mongoose": "^8.9.5",
     "mongose": "^0.0.2-security",
     "next": "15.1.6",
+    "next-auth": "^4.24.11",
     "next-intl": "^3.26.3",
     "node-jose": "^2.2.0",
     "react": "^19.0.0",
