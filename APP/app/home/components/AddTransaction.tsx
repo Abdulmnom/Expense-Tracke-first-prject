@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import classes from "../styles/addTransaction.module.css";
+import classes from "../styles/add-transaction.module.css";
 import { useAppContext } from "../../AppContext";
 
 export default function AddTransaction() {

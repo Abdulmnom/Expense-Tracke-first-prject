@@ -79,3 +79,15 @@
   flex-direction: row-reverse;
   margin-top: 30px;
 }
+
+.dashboard__signOut-link {
+  text-align: left;
+  margin-right: 200px;
+  background-color: #d4581e;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+  outline: none;
+}

@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { useAppContext } from "../AppContext";
 import IncomeExpense from "./components/IncomeExpense";
 import AddTransaction from "./components/AddTransaction";
 import History from "./components/History";
 import classes from "./home.module.css"; // Import the CSS module
+import { useTranslations, useLocale } from "next-intl";
 
 type Props = {};
 
 async function getTransactions(token?: string) {
+  const t = useTranslations("Home")
   const response = await fetch("http://localhost:3000/api/auth/transaction", {
     method: "GET",
     headers: {
@@ -54,6 +56,8 @@ export default function HomePage() {
         </div>
         <div className={classes["dashboard__history-transaction-container"]}>
           <a href="/graph" className={classes["dashboard__graph-link"]}>View Graph</a>
+          <a href="/graph" className={classes["dashboard__signOut-link"]}>Sign Out</a>
+
         </div>
       </div>
     </div>
